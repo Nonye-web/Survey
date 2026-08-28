@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="p:domain_verify" content="3fc100c2a98789301c6852921fa1251d"/>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Get Paid In Pounds And Dollars For Your Opinion</title>
@@ -228,8 +227,22 @@
     color:var(--text-muted);
     margin:8px 4px 4px;
   }
-  .qshots{margin-top:26px;display:flex;flex-direction:column;gap:14px;}
+  .qshots{
+    margin-top:26px;
+    display:flex;
+    flex-direction:row;
+    gap:14px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:6px;
+    scrollbar-width:none;
+  }
+  .qshots::-webkit-scrollbar{display:none;}
   .qshots img{
+    flex:0 0 82%;
+    max-width:340px;
+    scroll-snap-align:start;
     border-radius:var(--radius-lg);
     border:1px solid var(--glass-border);
   }
@@ -456,6 +469,70 @@
   .cta-secondary{background:var(--glass);}
   .cta-x{background:transparent;font-size:14px;}
 
+  .faq-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    position:relative;
+    z-index:2;
+    margin-top:8px;
+  }
+  .faq-item{
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    background:linear-gradient(135deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.05) 100%);
+    border:1px solid rgba(255,255,255,0.28);
+    backdrop-filter:blur(26px);
+    -webkit-backdrop-filter:blur(26px);
+    box-shadow:0 20px 44px -16px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.35);
+    transition:background .2s ease;
+  }
+  .faq-item.active{background:linear-gradient(135deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.07) 100%);}
+  .faq-question{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    padding:16px 18px;
+    background:none;
+    border:none;
+    text-align:left;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:15px;
+    line-height:1.4;
+    color:var(--text);
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .faq-icon{
+    flex-shrink:0;
+    width:22px;height:22px;
+    border-radius:50%;
+    border:1.5px solid var(--glass-border);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+    transition:transform .3s ease, background .3s ease, box-shadow .3s ease;
+  }
+  .faq-item.active .faq-icon{
+    transform:rotate(135deg);
+    background:var(--off-white);
+    border-color:transparent;
+    box-shadow:0 0 14px 2px rgba(255,248,239,0.65);
+  }
+  .faq-icon::before,.faq-icon::after{content:'';position:absolute;background:var(--text);border-radius:2px;}
+  .faq-item.active .faq-icon::before,.faq-item.active .faq-icon::after{background:var(--bg-a);}
+  .faq-icon::before{width:10px;height:1.5px;}
+  .faq-icon::after{width:1.5px;height:10px;}
+  .faq-answer-wrap{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .faq-answer{
+    padding:0 18px 18px;
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--text-muted);
+  }
+
   footer{
     padding:34px 22px 46px;
     text-align:center;
@@ -476,6 +553,7 @@
 
   @media (prefers-reduced-motion:reduce){
     .cta-stack{transition:none;}
+    .faq-answer-wrap,.faq-icon,.faq-item{transition:none;}
   }
 </style>
 </head>
@@ -536,7 +614,7 @@
 <section>
   <div class="glow" style="width:260px;height:260px;top:20px;right:-90px;"></div>
   <div class="wrap">
-    <h2 class="section-title">Here's what people are saying</h2>
+    <h2 class="section-title">Here's what my students are saying</h2>
     <p class="t-intro">These aren't strangers. They're people who started exactly where you're sitting right now, phone in hand, unsure if any of this was real.</p>
     <div class="t-grid">
       <div class="t-card">
@@ -687,6 +765,57 @@
   </div>
 </section>
 
+<!-- ================= FAQ SECTION ================= -->
+<section>
+  <div class="glow" style="width:260px;height:260px;top:20px;right:-90px;"></div>
+  <div class="wrap">
+    <p class="kicker">Still Wondering?</p>
+    <h2 class="section-title">Common Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button type="button" class="faq-question">Do I need a laptop to start?<span class="faq-icon"></span></button>
+        <div class="faq-answer-wrap"><p class="faq-answer">No, your phone is enough. A laptop just makes typing longer answers faster, but it's not required.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question">Is this a Ponzi or MLM scheme?<span class="faq-icon"></span></button>
+        <div class="faq-answer-wrap"><p class="faq-answer">No. You are never paid to recruit anyone. You get paid directly by companies for sharing your honest opinion.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question">How soon can I start making money?<span class="faq-icon"></span></button>
+        <div class="faq-answer-wrap"><p class="faq-answer">Most people get their first payout within one to two weeks, once their account and profile are set up the right way.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question">What if I'm a complete beginner?<span class="faq-icon"></span></button>
+        <div class="faq-answer-wrap"><p class="faq-answer">That's completely fine. Nothing here requires past experience. You just follow the steps in order.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question">Will I get support after the training?<span class="faq-icon"></span></button>
+        <div class="faq-answer-wrap"><p class="faq-answer">Yes. You get access to a support system so you are never left to figure things out alone.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question">How much can I realistically earn?<span class="faq-icon"></span></button>
+        <div class="faq-answer-wrap"><p class="faq-answer">It depends on how consistent you are, but many students build a steady side income once their setup is right.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question">Is there any cost to join survey sites?<span class="faq-icon"></span></button>
+        <div class="faq-answer-wrap"><p class="faq-answer">No. Joining the survey sites themselves is free. You are always the one getting paid, never the one paying.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question">What kind of questions do the surveys usually ask?<span class="faq-icon"></span></button>
+        <div class="faq-answer-wrap"><p class="faq-answer">Mostly simple opinion questions, like what products you use or what you think about certain brands and services.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question">Can I do this alongside school or a full time job?<span class="faq-icon"></span></button>
+        <div class="faq-answer-wrap"><p class="faq-answer">Yes. Most students do this in their free time since you choose when to answer.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-question">Do these survey sites work if I'm outside Nigeria?<span class="faq-icon"></span></button>
+        <div class="faq-answer-wrap"><p class="faq-answer">Yes. The same system works for people in other countries too, not just Nigeria.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   © 2026 Favour Nonye. All rights reserved.<br>
   This page is independently run and is not affiliated with, endorsed by, or connected to TikTok, Instagram, YouTube, or Google in any way. All trademarks belong to their respective owners.
@@ -813,6 +942,28 @@
   function revealCTAs(){
     document.getElementById('ctaStack').classList.add('show');
   }
+
+  // ---------- FAQ accordion ----------
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-question');
+    var wrap = item.querySelector('.faq-answer-wrap');
+    btn.addEventListener('click', function(){
+      var isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item.active').forEach(function(openItem){
+        if(openItem !== item){
+          openItem.classList.remove('active');
+          openItem.querySelector('.faq-answer-wrap').style.maxHeight = null;
+        }
+      });
+      if(isActive){
+        item.classList.remove('active');
+        wrap.style.maxHeight = null;
+      } else {
+        item.classList.add('active');
+        wrap.style.maxHeight = wrap.scrollHeight + 'px';
+      }
+    });
+  });
 </script>
 
 </body>
