@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="p:domain_verify" content="3fc100c2a98789301c6852921fa1251d"/>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Get Paid In Pounds And Dollars For Your Opinion</title>
@@ -88,7 +87,7 @@
     padding:8px 0 40px;
     text-align:center;
   }
-  .hero .glow{width:420px;height:420px;top:-60px;left:50%;transform:translateX(-50%);}
+  .hero .glow{display:none;}
   .eyebrow{
     font-family:'Fraunces',serif;
     font-style:italic;
@@ -128,6 +127,30 @@
     max-width:440px;
     margin:0 auto;
   }
+
+  .howto{
+    margin:20px auto 0;
+    max-width:420px;
+    text-align:left;
+  }
+  .howto p.howto-title{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:15px;
+    color:var(--text);
+    margin:0 0 8px;
+  }
+  .howto ol{
+    margin:0;
+    padding-left:20px;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:14px;
+    line-height:1.7;
+    color:var(--text-muted);
+  }
+  .howto li{margin-bottom:4px;}
 
   .steps{
     display:flex;
@@ -206,11 +229,20 @@
 
   .shot-row{
     display:flex;
+    flex-direction:row;
     gap:14px;
     margin-top:10px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:6px;
+    scrollbar-width:none;
   }
+  .shot-row::-webkit-scrollbar{display:none;}
   .shot-card{
-    flex:1;
+    flex:0 0 82%;
+    max-width:340px;
+    scroll-snap-align:start;
     border-radius:var(--radius-lg);
     padding:8px;
     background:linear-gradient(135deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.05) 100%);
@@ -251,11 +283,20 @@
   .prose{max-width:480px;margin:0 auto;position:relative;z-index:2;}
   .prose-kicker{
     font-family:'Inter',sans-serif;
-    font-weight:700;
-    font-size:13px;
+    font-weight:800;
+    font-size:17px;
     text-transform:uppercase;
     letter-spacing:0.06em;
+    text-decoration:underline;
+    text-underline-offset:4px;
     color:#fff;
+    margin:0 0 4px;
+  }
+  .prose-read{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--text-muted);
     margin:0 0 14px;
   }
   .prose p{font-size:16px;margin:0 0 18px;color:var(--text-muted);}
@@ -273,12 +314,21 @@
   }
   .t-grid{
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     gap:16px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding-bottom:6px;
+    scrollbar-width:none;
     position:relative;
     z-index:2;
   }
+  .t-grid::-webkit-scrollbar{display:none;}
   .t-card{
+    flex:0 0 82%;
+    max-width:340px;
+    scroll-snap-align:start;
     border-radius:var(--radius-lg);
     overflow:hidden;
     background:linear-gradient(135deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.05) 100%);
@@ -548,7 +598,6 @@
 
   @media (max-width:420px){
     .hero h1{font-size:30px;}
-    .shot-row{flex-direction:column;}
     .step small{font-size:10.5px;}
   }
 
@@ -578,6 +627,17 @@
     <p class="eyebrow">For Nigerians Ready To Earn In Foreign Currency</p>
     <h1>Revealing how Nigerians are getting paid in foreign currencies by foreign brands to give their opinions on products and services!</h1>
     <p class="sub">A simple way to earn real foreign currency answering survey questions online, once you know the right way to actually get started.</p>
+
+    <div class="howto">
+      <p class="howto-title">Here's how to get to the training video:</p>
+      <ol>
+        <li>Scroll down and fill in the short form with your name and email.</li>
+        <li>Answer the few quick questions that follow, so I know exactly where you're starting from.</li>
+        <li>Once you submit, your training video loads right here on this same page.</li>
+        <li>The page can take a few seconds to load fully, so give it a moment before assuming something's wrong.</li>
+        <li>Watch it through till the end, your access links unlock as the video plays.</li>
+      </ol>
+    </div>
 
     <div class="steps">
       <div class="step upcoming"><div class="dot"></div><small>Answer a few quick questions</small></div>
@@ -643,6 +703,7 @@
   <div class="glow" style="width:240px;height:240px;top:10px;left:-100px;"></div>
   <div class="wrap prose">
     <p class="prose-kicker">The Truth Most People Don't Know</p>
+    <p class="prose-read">read</p>
     <p>Every day, companies abroad spend real money just to hear what ordinary people think about their products. It's simple work, made for anyone with a phone and an honest opinion, and it pays out in pounds and dollars, not naira.</p>
     <p>So why does it feel impossible to actually get started from Nigeria? Because almost everyone goes about it the wrong way. They sign up on the first site they find, get rejected within days, and walk away convinced the whole thing is fake. It isn't fake. It just has to be done <strong>the right way</strong>, with the right sites, the right setup, and the right approach from day one, and that's the part nobody explains to you upfront.</p>
     <p>That's exactly what <strong>Your Foreign Currency Income Training</strong> below walks you through. Answer a few quick questions first so I know exactly what applies to you, then your training unlocks right after.</p>
